@@ -12,10 +12,14 @@ poetry shell
 install soracom router on raspberry pi
 
 ```sh
-SSID=raspberry
-WPA_PASS=abcdefcg # pass phrase length must be 8..63
-ROUTER_HOST_IP=192.168.11.62
-ansible-playbook -i ${ROUTER_HOST_IP}, ./soracom_router.yaml
+# ip address for your Raspberry Pi 
+ROUTER_HOST_IP=xxx.xxx.xxx.xxx
+
+# SSID for Raspberry Pi router
+SSID=raspberrypi
+
+# pass phrase length must be 8..63
+WPA_PASS=abcdefgh 
 ansible-playbook -i ${ROUTER_HOST_IP}, -e ssid=${SSID} -e wpapass=${WPA_PASS} ./soracom_router.yaml
 ```
 
