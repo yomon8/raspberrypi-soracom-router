@@ -5,12 +5,12 @@ Build Wifi Router with Raspberry Pi and SORACOM Air SIM
 ![](./image.png)
 
 
-### Prerequisites
+### Requirements
 
-- Raspberry Pi 3 / 4
-- Use USB sim dongle with Raspberry Pi
-- Rapsberry Pi OS installed
-- SSH Activated
+- Raspberry Pi 3 / 4 with USB SIM Dongle
+- SORACOM SIM
+- Rapsberry Pi OS
+- SSH configured
 
 
 ### How To Install
