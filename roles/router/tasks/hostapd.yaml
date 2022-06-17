@@ -1,0 +1,44 @@
+---
+- name: Install hostapd
+  become: true
+  apt:
+    update_cache: yes
+    name: hostapd
+
+- name: Save iptables
+  become: true
+  shell: |
+    systemctl unmask hostapd
+    systemctl daemon-reload
+
+- name: enable hostapd
+  become: true
+  service:
+    name: hostapd
+    enabled: yes
+
+- name: Copy hostapd.conf
+  become: true
+  copy:
+    src: hostapd.conf
+    dest: /etc/hostapd/hostapd.conf
+
+- name: Copy hostapd.conf
+  become: true
+  copy:
+    src: hostapd.conf
+    dest: /etc/hostapd/hostapd.conf
+
+- name: Set SSID
+  become: true
+  replace:
+    path: /etc/hostapd/hostapd.conf
+    regexp: __SSID__
+    replace: "{{ssid}}"
+
+- name: Set WPA Passphrase
+  become: true
+  replace:
+    path: /etc/hostapd/hostapd.conf
+    regexp: __WPAPASS__
+    replace: "{{wpapass}}"

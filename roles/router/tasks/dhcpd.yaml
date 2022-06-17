@@ -1,0 +1,12 @@
+---
+- name: Copy dhcpcd.conf
+  become: true
+  copy:
+    src: dhcpcd.conf
+    dest: /etc/dhcpcd.conf
+
+- name: enable dhcpcd
+  become: true
+  service:
+    name: dhcpcd
+    enabled: yes

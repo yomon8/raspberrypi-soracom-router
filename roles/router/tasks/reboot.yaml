@@ -1,0 +1,6 @@
+---
+- name: Reboot
+  become: true
+  shell: sleep 2 && shutdown -r now "ansible setup completed"
+  async: 1
+  poll: 0

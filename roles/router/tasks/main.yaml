@@ -1,0 +1,6 @@
+---
+- include_tasks: dhcpd.yaml
+- include_tasks: dnsmasq.yaml
+- include_tasks: hostapd.yaml
+- include_tasks: iptables.yaml
+- include_tasks: reboot.yaml
